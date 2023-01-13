@@ -1,8 +1,7 @@
-use std::{fs::File, io::Read};
+use std::env;
 
 fn main() {
-    let mut file = File::open("Cargo.toml").unwrap();
-    let mut contents = String::new();
-    file.read_to_string(&mut contents).unwrap();
-    println!("With text:\n{}", contents);
+    let args: Vec<String> = env::args().collect();
+
+    print!("{}", args[1]);
 }
