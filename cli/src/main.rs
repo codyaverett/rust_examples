@@ -21,4 +21,12 @@ fn main() {
             println!("{}", line);
         }
     }
+
+    /*
+        Exercise for the reader:
+        This is not the best implementation:
+        It will read the whole file into memory – however large the file may be.
+        Find a way to optimize it!
+        (One idea might be to use a BufReader instead of read_to_string().)
+    */
 }
