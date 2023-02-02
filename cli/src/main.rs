@@ -29,4 +29,15 @@ fn main() {
         Find a way to optimize it!
         (One idea might be to use a BufReader instead of read_to_string().)
     */
+
+    // Matches are used to handle errors returned by functions that return a Result.
+    // let result = std::fs::read_to_string("test.txt");
+    // match result {
+    //     Ok(content) => {
+    //         println!("File content: {}", content);
+    //     }
+    //     Err(error) => {
+    //         println!("Oh noes: {}", error);
+    //     }
+    // }
 }
