@@ -5,6 +5,7 @@ Deno.core.print("Hellof runjs!");
 console.log("Hello", "runjs!");
 console.error("Boom!");
 const path = "./log.txt";
+
 try {
     const contents = await runjs.readFile(path);
     console.log("Read from a file", contents);
@@ -20,5 +21,4 @@ console.log("Read from a file", path, "contents:", contents);
 console.log("Removing file", path);
 
 //runjs.removeFile(path);
-
 //console.log("File removed");
