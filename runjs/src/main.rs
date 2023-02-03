@@ -1,9 +1,19 @@
 // main.rs
+
+// use relative paths to import from ./run.rs
+mod utils;
+
 use clap::Parser;
 use deno_core::error::AnyError;
 use deno_core::op;
 use deno_core::Extension;
 use std::rc::Rc;
+
+#[op]
+fn op_run() -> Result<(), AnyError> {
+    utils::run();
+    Ok(())
+}
 
 #[op]
 async fn op_read_file(path: String) -> Result<String, AnyError> {
@@ -41,7 +51,7 @@ async fn run_js(file_path: &str) -> Result<(), AnyError> {
         extensions: vec![runjs_extension],
         ..Default::default()
     });
-    const RUNTIME_JAVASCRIPT_CORE: &str = include_str!("./runtime.js");
+    const RUNTIME_JAVASCRIPT_CORE: &str = include_str!("./runtime/main.js");
     js_runtime
         .execute_script("[runjs:runtime.js]", RUNTIME_JAVASCRIPT_CORE)
         .unwrap();

@@ -15,6 +15,10 @@
         },
     };
 
+    globalThis.run = (code) => {
+        Deno.core.evalContext(code);
+    }
+
     core.initializeAsyncOps();
     globalThis.runjs = {
         readFile: (path) => {
