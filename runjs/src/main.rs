@@ -41,6 +41,7 @@ async fn run_js(file_path: &str) -> Result<(), AnyError> {
     let main_module = deno_core::resolve_path(file_path)?;
     let runjs_extension = Extension::builder("runjs")
         .ops(vec![
+            op_run::decl(),
             op_read_file::decl(),
             op_write_file::decl(),
             op_remove_file::decl(),

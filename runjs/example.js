@@ -6,7 +6,7 @@ console.log("Hello", "runjs!");
 console.error("Boom!");
 const path = "./log.txt";
 
-run(`console.log("meta meta meta");`);
+run(`console.log(7 + 8);`);
 
 try {
     const contents = await runjs.readFile(path);
