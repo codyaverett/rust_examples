@@ -1,0 +1,11 @@
+image: nginx
+tasks:
+  serve:
+    cache: false # It doesn't make sense to cache this task.
+    mount_paths:
+      - index.html # Updates to this file will be visible inside the container.
+    ports:
+      - 3000:80 # Expose port 80 in the container as port 3000 on the host.
+    location: /usr/share/nginx/html/ # Nginx will serve the files in here.
+    command: nginx -g 'daemon off;' # Run in foreground mode.
+
